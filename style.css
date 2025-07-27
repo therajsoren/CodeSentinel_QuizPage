@@ -1,0 +1,55 @@
+  body {
+      font-family: 'Patrick Hand', cursive;
+      background-color: #fdfaf4;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+  }
+
+  .notepad {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+  }
+
+  .notepad::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 4rem;
+      width: 2px;
+      height: 100%;
+      background-color: #fecaca;
+  }
+
+  .option {
+      transition: all 0.3s ease-in-out;
+  }
+
+  .hidden-radio {
+      display: none;
+  }
+
+  .question-card:has(input:checked) {
+      pointer-events: none;
+  }
+  .question-card:has(input:checked) .correct-answer {
+      color: #22c55e;
+      font-weight: 600;
+  }
+
+  .question-card:has(input:checked) .correct-answer::before {
+      content: '✓ ';
+      color: #22c55e;
+  }
+
+  .incorrect-answer:has(input:checked) {
+      color: #ef4444;
+      text-decoration: line-through;
+      opacity: 0.7;
+  }
+
+  .incorrect-answer:has(input:checked)::before {
+      content: '✗ ';
+      color: #ef4444;
+  }
